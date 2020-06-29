@@ -198,7 +198,7 @@ class _AnimatedBottomSheetState extends State<AnimatedBottomSheet>
                                     decoration: InputDecoration(
                                       isCollapsed: true,
                                       filled: true,
-                                      fillColor: Colors.black87,
+                                      fillColor: Colors.black38,
                                       icon: Icon(Icons.send),
                                       border: const OutlineInputBorder(),
                                       hintText: "Comment...",
