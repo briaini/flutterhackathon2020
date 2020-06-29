@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 import '../../constants.dart';
 import '../../util.dart';
 import '../../utilui.dart';
+import '../../navigator.dart';
+import 'single_video_page.dart';
 import 'single_video_page.dart';
 
 class VideoDetailsPage extends StatefulWidget {
@@ -28,7 +30,9 @@ class _VideoDetailsPage extends State<StatefulWidget> {
     final posts = Provider.of<PostProvider>(context).posts;
 
     return Scaffold(
-      appBar: AppBar(title: UtilUI.getTextH1(constants.scAppName, constants, util.getTheme(context).accentColor)),
+      appBar: AppBar(
+          title: UtilUI.getTextH1(constants.scAppName, constants,
+              util.getTheme(context).accentColor)),
       body: getBody(posts),
     );
   }
@@ -45,18 +49,22 @@ class _VideoDetailsPage extends State<StatefulWidget> {
             SizedBox(
               width: constants.d12,
             ),
-            UtilUI.getTextH1(constants.sHashtags, constants, util.getTheme(context).accentColor)
+            UtilUI.getTextH1(constants.sHashtags, constants,
+                util.getTheme(context).accentColor)
           ]),
           SizedBox(
             height: constants.d250,
             child: HashtagWidget(),
           ),
-          SizedBox(width: constants.d100, child: Divider(color: util.getTheme(context).accentColor)),
+          SizedBox(
+              width: constants.d100,
+              child: Divider(color: util.getTheme(context).accentColor)),
           Row(children: [
             SizedBox(
               width: constants.d12,
             ),
-            UtilUI.getTextH1(constants.sTrending, constants, util.getTheme(context).accentColor)
+            UtilUI.getTextH1(constants.sTrending, constants,
+                util.getTheme(context).accentColor)
           ]),
           Column(
             children: posts.map((post) => getVTile(post)).toList(),
@@ -74,7 +82,8 @@ class _VideoDetailsPage extends State<StatefulWidget> {
         child: Card(
           elevation: constants.dElevation,
           margin: constants.dPadding12,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(constants.dRadius)),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(constants.dRadius)),
           child: Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,10 +96,13 @@ class _VideoDetailsPage extends State<StatefulWidget> {
                   child: Container(
                     width: double.infinity,
                     height: 200,
-                    child: Image(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(post.pictureUrl),
-                    ),
+                    child: GestureDetector(
+                        child: Image(
+                          fit: BoxFit.cover,
+                          image: NetworkImage(post.pictureUrl),
+                        ),
+                        onTap: () => Nav()
+                            .navigatePush(context, SingleVideoPage.tag, null)),
                   ),
                 ),
                 Padding(
@@ -117,7 +129,12 @@ class HashtagWidget extends StatelessWidget {
     return Column(
       children: [
         CarouselSlider(
-          options: CarouselOptions(autoPlay: true, aspectRatio: 2.0, enlargeCenterPage: true, disableCenter: true, viewportFraction: constants.d04),
+          options: CarouselOptions(
+              autoPlay: true,
+              aspectRatio: 2.0,
+              enlargeCenterPage: true,
+              disableCenter: true,
+              viewportFraction: constants.d04),
           items: TagProvider().posts.map(
             (e) {
               return getHTile(e);
@@ -132,7 +149,8 @@ class HashtagWidget extends StatelessWidget {
     return Card(
       elevation: constants.dElevation,
       margin: constants.dPadding4,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(constants.dRadius)),
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(constants.dRadius)),
       child: TagListItem(tag: e),
     ); //UtilUI.i//UtilUI.getLottie(constants.animLogo));
   }
@@ -149,14 +167,17 @@ class TagListItem extends StatelessWidget {
         Column(
           children: <Widget>[
             SizedBox(height: constants.d12),
-            UtilUI.getTextH2(tag.tag, constants, util.getTheme(context).accentColor),
+            UtilUI.getTextH2(
+                tag.tag, constants, util.getTheme(context).accentColor),
             SizedBox(height: constants.d8),
             ClipRRect(
               borderRadius: BorderRadius.circular(6),
               child: Image.network(tag.thumbnailUrl, fit: BoxFit.cover),
             ),
             SizedBox(height: constants.d8),
-            Visibility(child: UtilUI.getIcon(Icons.play_arrow, util.getTheme(context).primaryColor, constants.d32)),
+            Visibility(
+                child: UtilUI.getIcon(Icons.play_arrow,
+                    util.getTheme(context).primaryColor, constants.d32)),
           ],
         ),
       ],
