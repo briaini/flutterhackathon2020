@@ -6,6 +6,24 @@ A new Flutter project.
 
 The project uses google signin. Please update the googleservices json and plist for iOS and android respectively to be able to use the app.
 
+## Contributers
+
+Our team consists of members from Angola, India, Germany, Rwanda, and Vietnam. Some team members have relocated to countries such as Brazil, Finland, Germany, and Ireland. We joined forces online the night before the Hackathon, combining our skills and passion for developing from around the globe.
+
+Pedro Massango https://github.com/pedromassango
+
+Brian Kummer https://github.com/briaini
+
+Sudipta Dutta https://github.com/ir2pid
+
+Hung Nguyen https://github.com/Harrisonnguyen1210
+
+Mahoro Pierratono Costa https://github.com/pierratonoc
+
+## About
+
+The purpose of our app is, from a humanitarian perspective, to save the planet. It addresses police brutality, an issue that has unfortunately been present since the beginning of policing and is finally gaining serious public attention during the timeframe of this pandemic. The idea of the app is to harness the power of mobile technology to record, report, and share peoples' interactions with police in order to draw attention to heinous acts as well as recognize police officers responsibly upholding their duties. With the chaotic nature of news, along with occasionally short-lived news cycles, some occurrences unfortunately do not receive the public attention that they should or are quickly forgotten. Officerr confronts these issues in a manner that unites society by leading to more accountable policing and rebuilding trust between all. A user may upload a story, a previously captured image or video, or an image or video captured through the app. These posts are uploaded to a public repository. Users may search, filter and view these posts with the intention being for them to leave a review of the interaction. This review aggregator allows for people to participate in drawing attention to cases of interest. This increased attention as well as not only seeing the good and bad, but having a centrally located, easily navigable history to look back on will provide pressure to make necessary systemic changes.
+
 ### Instructions:
 #### Android integration 
 To access Google Sign-In, you'll need to make sure to register your application.
